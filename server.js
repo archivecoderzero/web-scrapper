@@ -66,6 +66,7 @@ app.get("/scrape1", function(req, res) {
         })
         .catch(function(err) {
           // If an error occurred, log it
+          console.log("scra   article!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
           console.log(err);
         });
     });
@@ -126,6 +127,7 @@ app.get("/articles", function(req, res) {
     })
     .catch(function(err) {
       // If an error occurred, send it to the client
+      console.log("article!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1");
       res.json(err);
     });
 });
