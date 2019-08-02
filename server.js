@@ -50,7 +50,9 @@ mongoose
 // A GET route for scraping the echoJS website
 app.get("/scrape1", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://www.usnews.com/topics/subjects/stock-market").then(function(response) {
+  // axios.get("https://www.usnews.com/topics/subjects/stock-market").then(function(response) {
+  axios.get("https://en.wikipedia.org/wiki/Japanese_aircraft_carrier_Ry%C5%ABj%C5%8D").then(function(response) {
+
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 
