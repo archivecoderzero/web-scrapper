@@ -33,8 +33,17 @@ app.set('view engine', 'handlebars');
 // Connect to the Mongo DB
 var MONGODBURI = process.env.MONGODBURI || "mongodb://localhost/unit18Populater" ;
  
-mongoose.connect(MONGODBURI);
-
+//mongoose.connect(MONGODBURI);
+// connect to mongoDB
+mongoose
+  .connect(MONGODBURI)
+  .then(() => {
+    console.log('MongoDB Connected');
+  })
+  .catch(err => {
+    console.log(err);
+    console.log('\x1b[31m\x1b[1m MongoDB Not Connected');
+  });
 // Routes
 
 // A GET route for scraping the echoJS website
