@@ -51,7 +51,7 @@ mongoose
 app.get("/scrape1", function(req, res) {
   // First, we grab the body of the html with axios
   // axios.get("https://www.usnews.com/topics/subjects/stock-market").then(function(response) {
-  axios.get("https://www.reddit.com/").then(function(response) {
+  axios.get("https://www.reddit.com/r/MadeMeSmile/").then(function(response) {
 
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
