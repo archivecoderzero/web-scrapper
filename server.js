@@ -50,8 +50,8 @@ mongoose
 // A GET route for scraping the echoJS website
 app.get("/scrape1", function(req, res) {
   // First, we grab the body of the html with axios
-  // axios.get("https://www.usnews.com/topics/subjects/stock-market").then(function(response) {
-  axios.get("https://www.reddit.com/r/MadeMeSmile/").then(function(response) {
+  axios.get("https://www.usnews.com/topics/subjects/stock-market").then(function(response) {
+  // axios.get("https://www.reddit.com/r/MadeMeSmile/").then(function(response) {
 
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
@@ -71,8 +71,8 @@ app.get("/scrape1", function(req, res) {
       
 
       // Create a new Article using the `result` object built from scraping
-      // db.Article.create(result)
-      db.Article.create({title:"title", link:"link"})
+      db.Article.create(result)
+      //db.Article.create({title:"title", link:"link"})
         .then(function(dbArticle) {
           // View the added result in the console
           console.log(dbArticle);
