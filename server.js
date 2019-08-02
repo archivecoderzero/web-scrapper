@@ -31,7 +31,8 @@ app.set('view engine', 'handlebars');
 
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+var MONGODBURI = process.env.MONGODBURI || "mongodb://localhost/unit18Populater" ; 
+mongoose.connect(MONGODBURI);
 
 // Routes
 
