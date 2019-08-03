@@ -39,7 +39,7 @@ mongoose
 // SCRAPING TEST : ------ > START X1
 app.get("/scrape-1", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("http://www.echojs.com/").then(function(response) {
+  axios.get("https://old.reddit.com/r/news/").then(function(response) {
   // axios.get("https://www.reddit.com/r/MadeMeSmile/").then(function(response) {
 
     // Then, we load that into cheerio and save it to $ for a shorthand selector
@@ -48,7 +48,7 @@ app.get("/scrape-1", function(req, res) {
     $("article h2").each(function(i, element) {
       var result = {};
       result.title = $(this).children("a").text();
-      result.link = $(this).children("a").attr("href");
+      result.link = $(this).find("a").attr("href");
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -78,18 +78,15 @@ app.get("/articles", function(req, res) {
 // SCRAPING REAL-1 : ------ > START X2
 app.get("/scrape-2", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://old.reddit.com/r/webdev/").then(function(response) {
+  axios.get("https://old.reddit.com/r/news/").then(function(response) {
 
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
-
     $(".title").each(function(i, element) {
       var result = {};
       let linker = "www.reddit.com"
       result.title = $(this).children("a").text();
       result.link = linker + $(this).children("a").attr("href");
-
-
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
