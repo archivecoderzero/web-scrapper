@@ -26,11 +26,13 @@ $(document).on("click", "p", function() {
       // The title of the article
       $("#notes").append("<h2>" + data.title + "</h2>");
       // An input to enter a new title
-      $("#notes").append("<input id='titleinput' name='title' >");
+      $("#notes").append("<input  placeholder='TITLE' id='titleinput' name='title' >");
       // A textarea to add a new note body
-      $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
+      $("#notes").append("<textarea placeholder='NOTES' id='bodyinput' name='body'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
-      $("#notes").append("<button data-id='" + data._id + "' id='savenote'>Save Note</button>");
+      var pencil = "<i class=fas fa-pencil-alt></i>";
+      $("#notes").append("<button data-id='" + data._id + "' id='savenote' class='btn btn-dark'  > Save Note " + pencil + "</button>");
+
 
       // If there's a note in the article
       if (data.note) {

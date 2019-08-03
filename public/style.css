@@ -3,6 +3,10 @@ body {
   background-color: #F2F6D0 ;
   }
 
+.jumbotron.jumbotron-fluid {
+  background-image: url("../../assets/bgmain.jpeg");
+}
+
   #wrapper {
     width: 960px;
     margin-left: auto;
@@ -11,20 +15,22 @@ body {
   }
   #articles {
     display: inline-block;
+    font-family: 'Bree Serif', serif;  
   }
   #notes {
-    position: absolute;
-    top:20%;
-    left: 30%;
-    max-height: 100px;
-    width: 50%
+      float: right;
+      width: 30%;
+    background-image: url("../../assets/note.png");
+
   }
   textarea, input {
+    font-family: 'Beth Ellen', cursive;
     display: block;
     width: 100%;
-    background-color: #FCF5C7;
+    background-image: url("../../assets/note.png");
   }
   input {
+    font-family: 'Beth Ellen', cursive;
     height: 36px;
     font-size: 24px;
   }
@@ -32,3 +38,26 @@ body {
     height: 200px;
     font-size: 18px;
   }
+
+
+  
+.card-footer {
+  text-align: center;
+  background: black;
+
+}
+
+.card-footer:hover {
+  color:tomato;
+  transition: .7s ease;
+}
+
+#main-text {
+  text-align: center
+
+}
+
+.main.Articles {
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+}

@@ -148,6 +148,40 @@ app.get("/articles", function(req, res) {
 });
 // SCRAPING REAL 3 : ------ > END - X3
 
+// SCRAPING REAL 3 : ------ > START X3
+app.get("/scrape-delete", function(req, res) {
+  // First, we grab the body of the html with axios
+  axios.get("http://www.echojs.com/").then(function(response) {
+    var $ = cheerio.load(response.data);
+    $("article h2").each(function(i, element) {
+      var result = {};
+      result.title = $(this).children("a").text();
+      result.link = $(this).children("a").attr("href");
+      db.Article.create(result)
+        .then(function(dbArticle) {
+          console.log(dbArticle);
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
+    });
+    res.render('index');
+  });
+});
+app.get('/', function(req, res) {
+    res.render('index');
+});
+app.get("/articles", function(req, res) {
+  db.Article.find({})
+    .then(function(dbArticle) {
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+// SCRAPING REAL 3 : ------ > END - X3
+
 
 
 
