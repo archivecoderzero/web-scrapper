@@ -8,7 +8,7 @@ body {
 }
 
   #wrapper {
-    width: 960px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
     padding-top: 5%;
@@ -17,12 +17,28 @@ body {
     display: inline-block;
     font-family: 'Bree Serif', serif;  
   }
+
+  #ind_art {
+    padding:5px;
+  }
+
+  #ind_art:hover {
+    display: inline-block;
+    font-family: 'Bree Serif', serif;  
+    background: gold;
+    color:tomato;
+    transition: .7s ease;
+
+}
+
   #notes {
       float: right;
       width: 30%;
     background-image: url("../../assets/note.png");
 
   }
+
+
   textarea, input {
     font-family: 'Beth Ellen', cursive;
     display: block;
