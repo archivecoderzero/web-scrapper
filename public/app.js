@@ -1,20 +1,23 @@
+let beenclicked = false;
+
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p  data-id='" + data[i]._id + "' id='ind_art' >" + data[i].title + "<br /> "+  data[i].link  + "<i class='fas fa-arrow-circle-right'></i></a> </p>");
+    $("#articles").append("<p   id='ind_art' >" + data[i].title +  "<a href=" + data[i].link  + "<i class='fas fa-arrow-circle-right'></i></a><i data-id='" + data[i]._id + " 'class='fas fa-pencil-alt' data-toggle='modal' data-target='#exampleModal'></i></p>");
   }
+
+  
 });
 
 
 // Whenever someone clicks a p tag
-$(document).on("click", "p", function() {
+$(document).on("click", ".fa-pencil-alt", function() {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag
   var thisId = $(this).attr("data-id");
-
   // Now make an ajax call for the Article
   $.ajax({
     method: "GET",
@@ -30,8 +33,15 @@ $(document).on("click", "p", function() {
       // A textarea to add a new note body
       $("#notes").append("<textarea placeholder='NOTES' id='bodyinput' name='body'></textarea>");
       // A button to submit a new note, with the id of the article saved to it
-      var pencil = "<i class=fas fa-pencil-alt></i>";
-      $("#notes").append("<button data-id='" + data._id + "' id='savenote' class='btn btn-dark'  > Save Note " + pencil + "</button>");
+
+      if (beenclicked===true){
+        console.log("nothing")
+      }
+      else{
+      $(".modal-footer").append("<button data-id='" + data._id + "' id='savenote' class='btn btn-dark'  > Save Note " + "</button>");
+      beenclicked=true;
+    }
+
 
 
       // If there's a note in the article

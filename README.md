@@ -22,7 +22,9 @@
 
 ## Known Bugs  : 08/03/19
 > The web application is still buggy ,mainly the positioning of the Note taker probably has to be a modal , as of now 08/03/19 , it is not a modal its just another div.
-
+  - ✅ Solved : Using Modals 08/03/19
+> The save button generates every time you click on the pencil
+  - ✅ Solved : hardcoded on app.js the variable "beenclicked" to true , 
 
 
 

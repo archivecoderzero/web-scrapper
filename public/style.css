@@ -32,10 +32,16 @@ body {
 }
 
   #notes {
-      float: right;
-      width: 30%;
-    background-image: url("../../assets/note.png");
+      width:100%;
+  }
 
+  .modal.fade {
+    background-image: url("../../assets/modalbg.gif");
+  }
+
+  .modal-dialog
+  {
+    background-image: url("../../assets/note.png");
   }
 
 
@@ -43,7 +49,6 @@ body {
     font-family: 'Beth Ellen', cursive;
     display: block;
     width: 100%;
-    background-image: url("../../assets/note.png");
   }
   input {
     font-family: 'Beth Ellen', cursive;
@@ -76,4 +81,12 @@ body {
 .main.Articles {
   text-align: center;
   font-family: 'Indie Flower', cursive;
+}
+
+.fas.fa-arrow-circle-right {
+  font-size:30px; 
+}
+
+.fas.fa-arrow-circle-right {
+  font-size:30px; 
 }
