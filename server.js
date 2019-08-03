@@ -45,10 +45,11 @@ app.get("/scrape-1", function(req, res) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 
-    $("article h2").each(function(i, element) {
+    $(".title").each(function(i, element) {
       var result = {};
       result.title = $(this).children("a").text();
-      result.link = $(this).find("a").attr("href");
+      linkToText = $(this).find("a").attr("href");
+      result.link = JSON.stringify(linkToText);
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
