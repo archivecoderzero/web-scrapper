@@ -37,8 +37,10 @@ $(document).on("click", ".fa-pencil-alt", function() {
       if (beenclicked===true){
         console.log("nothing")
       }
+
+
       else{
-      $(".modal-footer").append("<button data-id='" + data._id + "' id='savenote' class='btn btn-dark'  > Save Note " + "</button>");
+      $(".modal-footer").append("<button data-dismiss='modal' data-id='" + data._id + "' id='savenote' class='btn btn-dark'  > Save Note " + "</button>");
       beenclicked=true;
     }
 

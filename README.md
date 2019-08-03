@@ -21,20 +21,14 @@
 
 
 ## Known Bugs  : 08/03/19
+> Works locally but does not pull from Heroku Mongo DB
+  - ✅ Solved : h3 when i pull from a website does not want to pass thru MONGODBURI , the thing with that is , it has a value of "null" for the "links" and MongoDB mLAB Does not like any NULL being passed thru it .
 > The web application is still buggy ,mainly the positioning of the Note taker probably has to be a modal , as of now 08/03/19 , it is not a modal its just another div.
   - ✅ Solved : Using Modals 08/03/19
 > The save button generates every time you click on the pencil
   - ✅ Solved : hardcoded on app.js the variable "beenclicked" to true , 
 
 
-
-
-
-## Install
-
-```sh
-npm install
-```
 
 ## Show your support
 

@@ -35,29 +35,30 @@ body {
       width:100%;
   }
 
-  .modal.fade {
-    background-image: url("../../assets/modalbg.gif");
-  }
-
-  .modal-dialog
+  .modal-content
   {
     background-image: url("../../assets/note.png");
   }
 
 
   textarea, input {
-    font-family: 'Beth Ellen', cursive;
+    font-family: 'Indie Flower', cursive;
     display: block;
     width: 100%;
+    background-image: url("../../assets/note.png");
+
   }
   input {
-    font-family: 'Beth Ellen', cursive;
+    font-family: 'Indie Flower', cursive;
     height: 36px;
     font-size: 24px;
+    background: none;
   }
   textarea {
     height: 200px;
     font-size: 18px;
+    background: none;
+
   }
 
 
