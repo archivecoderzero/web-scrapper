@@ -1,9 +1,9 @@
 // Grab the articles as a json
-$.getJSON("/articles", function(data) {
+$.getJSON("/articlesreddit", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p id='ind_art' >" + data[i].title + "<br /><a href=" + data[i].link + ">" + data[i].link + " <i class='fas fa-arrow-circle-right'></i></a> </p>");
+    $("#articles").append("<p  data-id='" + data[i]._id + "' id='ind_art' >" + data[i].title + "<br /> "+  data[i].link  + "<i class='fas fa-arrow-circle-right'></i></a> </p>");
   }
 
   
@@ -11,7 +11,7 @@ $.getJSON("/articles", function(data) {
 
 
 // Whenever someone clicks a p tag
-$(document).on("click", ".makenote", function() {
+$(document).on("click", "p", function() {
   // Empty the notes from the note section
   $("#notes").empty();
   // Save the id from the p tag

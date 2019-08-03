@@ -78,16 +78,18 @@ app.get("/articles", function(req, res) {
 // SCRAPING REAL-1 : ------ > START X2
 app.get("/scrape-2", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("http://www.echojs.com/").then(function(response) {
-  // axios.get("https://www.reddit.com/r/MadeMeSmile/").then(function(response) {
+  axios.get("https://old.reddit.com/r/webdev/").then(function(response) {
 
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 
-    $("article h2").each(function(i, element) {
+    $(".title").each(function(i, element) {
       var result = {};
+      let linker = "www.reddit.com"
       result.title = $(this).children("a").text();
-      result.link = $(this).children("a").attr("href");
+      result.link = linker + $(this).children("a").attr("href");
+
+
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -102,7 +104,7 @@ app.get("/scrape-2", function(req, res) {
 app.get('/', function(req, res) {
     res.render('index');
 });
-app.get("/articles", function(req, res) {
+app.get("/articlesreddit", function(req, res) {
   db.Article.find({})
     .then(function(dbArticle) {
       res.json(dbArticle);
@@ -117,7 +119,7 @@ app.get("/articles", function(req, res) {
 // SCRAPING REAL 3 : ------ > START X3
 app.get("/scrape-3", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("http://www.echojs.com/").then(function(response) {
+  axios.get("https://news.ycombinator.com/").then(function(response) {
     var $ = cheerio.load(response.data);
     $("article h2").each(function(i, element) {
       var result = {};
