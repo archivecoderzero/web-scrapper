@@ -84,9 +84,8 @@ app.get("/scrape-2", function(req, res) {
     var $ = cheerio.load(response.data);
     $(".title").each(function(i, element) {
       var result = {};
-      let linker = "www.reddit.com"
       result.title = $(this).children("a").text();
-      result.link = linker + $(this).children("a").attr("href");
+      result.link =  $(this).children("a").attr("href");
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
