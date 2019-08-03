@@ -20,15 +20,13 @@ body {
 
   #ind_art {
     padding:5px;
+
   }
 
   #ind_art:hover {
-    display: inline-block;
     font-family: 'Bree Serif', serif;  
-    background: gold;
     color:tomato;
     transition: .7s ease;
-
 }
 
   #notes {
@@ -86,8 +84,11 @@ body {
 
 .fas.fa-arrow-circle-right {
   font-size:30px; 
+  padding: 5px;
 }
 
-.fas.fa-arrow-circle-right {
+
+.fas.fa-pencil-alt{
   font-size:30px; 
+  padding: 5px
 }

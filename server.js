@@ -39,17 +39,17 @@ mongoose
 // SCRAPING TEST : ------ > START X1
 app.get("/scrape-1", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://old.reddit.com/r/news/").then(function(response) {
+  axios.get("https://www.cnbc.com/stocks/").then(function(response) {
   // axios.get("https://www.reddit.com/r/MadeMeSmile/").then(function(response) {
 
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 
-    $(".title").each(function(i, element) {
+    $(".Card-titleContainer").each(function(i, element) {
       var result = {};
       result.title = $(this).children("a").text();
-      linkToText = $(this).find("a").attr("href");
-      result.link = JSON.stringify(linkToText);
+      result.link = $(this).find("a").attr("href");
+      result.from = "stocks";
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -87,6 +87,8 @@ app.get("/scrape-2", function(req, res) {
       var result = {};
       result.title = $(this).children("a").text();
       result.link =  $(this).children("a").attr("href");
+      result.from = "reddit";
+
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -101,7 +103,7 @@ app.get("/scrape-2", function(req, res) {
 app.get('/', function(req, res) {
     res.render('index');
 });
-app.get("/articlesreddit", function(req, res) {
+app.get("/articles", function(req, res) {
   db.Article.find({})
     .then(function(dbArticle) {
       res.json(dbArticle);
@@ -124,6 +126,8 @@ app.get("/scrape-3", function(req, res) {
       var result = {};
       result.title = $(this).children("a").text();
       result.link =  $(this).children("a").attr("href");
+      result.from = "all";
+
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -138,7 +142,7 @@ app.get("/scrape-3", function(req, res) {
 app.get('/', function(req, res) {
     res.render('index');
 });
-app.get("/articlesreddit", function(req, res) {
+app.get("/articles", function(req, res) {
   db.Article.find({})
     .then(function(dbArticle) {
       res.json(dbArticle);

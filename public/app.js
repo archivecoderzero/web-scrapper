@@ -5,11 +5,20 @@ $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").append("<p   id='ind_art' >" + data[i].title +  "<a href=" + data[i].link  + "<i class='fas fa-arrow-circle-right'></i></a><i data-id='" + data[i]._id + " 'class='fas fa-pencil-alt' data-toggle='modal' data-target='#exampleModal'></i></p>");
+    $("#articles").prepend("<p   id='ind_art' >" + data[i].title +  "<a href=" + data[i].link  + "<i class='fas fa-arrow-circle-right'></i></a><i data-id='" + data[i]._id + " 'class='fas fa-pencil-alt' data-toggle='modal' data-target='#exampleModal'></i></p>");
+
+    if (data[i].from == "all"){
+      $("#articles").prepend("Category : All <i class='fas fa-globe-asia'> </i>");     
+    }
+    else if(data[i].from == "reddit"){
+      $("#articles").prepend(" Category : Reddit <i class='fab fa-reddit-square'></i>");     
+    }
+    else{
+      $("#articles").prepend("Category : Stock<i class='fas fa-money-bill-wave'></i>");     
+    }
   }
 
-  
-});
+  });
 
 
 // Whenever someone clicks a p tag
