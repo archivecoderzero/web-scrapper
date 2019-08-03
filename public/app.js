@@ -1,12 +1,10 @@
 // Grab the articles as a json
-$.getJSON("/articlesreddit", function(data) {
+$.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
     $("#articles").append("<p  data-id='" + data[i]._id + "' id='ind_art' >" + data[i].title + "<br /> "+  data[i].link  + "<i class='fas fa-arrow-circle-right'></i></a> </p>");
   }
-
-  
 });
 
 
