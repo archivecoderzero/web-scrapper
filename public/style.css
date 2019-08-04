@@ -7,6 +7,10 @@ body {
   background-image: url("../../assets/bgmain.jpg");
 }
 
+.jumbotron{
+  background-image: url("../../assets/news.jpg");
+}
+
   #wrapper {
     width: 90%;
     margin-left: auto;

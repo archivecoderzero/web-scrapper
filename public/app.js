@@ -1,5 +1,6 @@
 let beenclicked = false;
 
+
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
@@ -93,3 +94,5 @@ $(document).on("click", "#savenote", function() {
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
+
+
