@@ -46,6 +46,12 @@ app.get("/scrape-1", function(req, res) {
       result.title = $(this).children("a").text();
       result.link = $(this).find("a").attr("href");
       result.from = "stocks";
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); 
+      var yyyy = today.getFullYear();
+      today = mm + '/' + dd + '/' + yyyy;
+      result.date = today;
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -84,6 +90,12 @@ app.get("/scrape-2", function(req, res) {
       result.title = $(this).children("a").text();
       result.link =  $(this).children("a").attr("href");
       result.from = "News";
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      today = mm + '/' + dd + '/' + yyyy;
+      result.date = today;
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -121,6 +133,12 @@ app.get("/scrape-4", function(req, res) {
       result.title = $(this).children("a").attr("title");
       result.link =  $(this).children("a").attr("href");
       result.from = "twitter";
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      today = mm + '/' + dd + '/' + yyyy;
+      result.date = today;
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -160,6 +178,12 @@ app.get("/scrape-3", function(req, res) {
       linker = "https://www.reddit.com"
       result.link = linker + $(this).children("a").attr("href");
       result.from = "reddit";
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+      today = mm + '/' + dd + '/' + yyyy;
+      result.date = today;
 
       db.Article.create(result)
         .then(function(dbArticle) {
