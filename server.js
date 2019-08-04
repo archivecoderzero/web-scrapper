@@ -83,7 +83,7 @@ app.get("/scrape-2", function(req, res) {
       var result = {};
       result.title = $(this).children("a").text();
       result.link =  $(this).children("a").attr("href");
-      result.from = "Reddit News";
+      result.from = "News";
       db.Article.create(result)
         .then(function(dbArticle) {
           console.log(dbArticle);
@@ -157,7 +157,8 @@ app.get("/scrape-3", function(req, res) {
     $(".title").each(function(i, element) {
       var result = {};
       result.title = $(this).children("a").text();
-      result.link =  $(this).children("a").attr("href");
+      linker = "https://www.reddit.com"
+      result.link = linker + $(this).children("a").attr("href");
       result.from = "all";
 
       db.Article.create(result)

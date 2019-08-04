@@ -25,8 +25,8 @@
 		<form action="/delete-scrapes">
 			<button type="submit" class="btn btn-danger">Delete Scrapes <i class="fas fa-bug"></i> </button>
 			<button type="button" class="btn btn-primary">
-			Total Notes <span id='notes_count' class="badge badge-light">0</span>
-		</button>
+				Total Notes <span id='notes_count' class="badge badge-light">0</span>
+			</button>
 		</form>
 		{{!-- SCRAPE BUTTON 4 END --}}
 	</nav>
@@ -38,42 +38,34 @@
 			<br>
 			<div class="container">
 				<div class="row">
-					<div class="col">
+					<div class="col-3">
 						{{!-- SCRAPE BUTTON 1 START --}}
 						<form action="/scrape-2">
-							<button type="submit" class="btn btn-info">News Articles <i class="fas fa-rss-square"></i></button>
+							<button type="submit" class="btn btn-warning">News Articles <i
+									class="fas fa-rss-square"></i></button>
 						</form>
 						{{!-- SCRAPE BUTTON 1 END --}}
 					</div>
-					<div class="col">
+					<div class="col-3">
 						{{!-- SCRAPE BUTTON 2 START --}}
 						<form action="/scrape-1">
-							<button type="submit" class="btn btn-info">Stock Articles <i
+							<button type="submit" class="btn btn-success">Stock Articles <i
 									class='fas fa-money-bill-wave'></i></button>
 						</form>
 						{{!-- SCRAPE BUTTON 2 END --}}
 					</div>
-					<div class="col">
+					<div class="col-3">
 						{{!-- SCRAPE BUTTON 3 START --}}
 						<form action="/scrape-3">
-							<button type="submit" class="btn btn-info">Reddit <i class='fab fa-reddit-square'></i>
+							<button type="submit" class="btn btn-reddit">Reddit <i class='fab fa-reddit-square'></i>
 							</button>
 						</form>
 						{{!-- SCRAPE BUTTON 3 END --}}
 					</div>
-					<div class="col">
+					<div class="col-3">
 						{{!-- SCRAPE BUTTON 3 START --}}
 						<form action="/scrape-4">
-							<button type="submit" class="btn btn-info">Twitter <i class='fab fa-twitter-square'></i>
-							</button>
-						</form>
-						{{!-- SCRAPE BUTTON 3 END --}}
-					</div>
-
-										<div class="col">
-						{{!-- SCRAPE BUTTON 3 START --}}
-						<form action="/scrape-4">
-							<button type="submit" class="btn btn-info">Twitter <i class='fab fa-twitter-square'></i>
+							<button type="submit" class="btn btn-primary">Twitter <i class='fab fa-twitter-square'></i>
 							</button>
 						</form>
 						{{!-- SCRAPE BUTTON 3 END --}}

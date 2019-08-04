@@ -95,4 +95,8 @@ body {
 .fas.fa-pencil-alt{
   font-size:30px; 
   padding: 5px
+
+  
 }
+
+.btn-reddit{color:#fff;background-color:#FF4301;border-color:#FF4301}.btn-info:hover{color:#fff;background-color:#FF4301;border-color:#ff561b}.btn-info.focus,.btn-info:focus{box-shadow:0 0 0 .2rem rgba(58,176,195,.5)}.btn-info.disabled,.btn-info:disabled{color:#fff;background-color:#FF4301;border-color:#FF4301}.btn-info:not(:disabled):not(.disabled).active,.btn-info:not(:disabled):not(.disabled):active,.show>.btn-info.dropdown-toggle{color:#fff;background-color:#ff561b;border-color:#ff561b}.btn-info:not(:disabled):not(.disabled).active:focus,.btn-info:not(:disabled):not(.disabled):active:focus,.show>.btn-info.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(58,176,195,.5)}
