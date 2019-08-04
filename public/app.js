@@ -21,17 +21,17 @@ $.getJSON("/articles", function(data) {
     // Display the apropos information on the page
     $("#articles").prepend("<p   id='ind_art' >" + data[i].title +  "<a href=" + data[i].link  + " <i class='fas fa-arrow-circle-right'></i></a><i class='fas fa-pencil-alt' data-id='" + data[i]._id + "' data-toggle='modal' data-target='#exampleModal'></i></p>");
 
-    if (data[i].from == "all"){
-      $("#articles").prepend("Source : Reddit r/all <i class='fab fa-reddit-square'> </i>");     
+    if (data[i].from == "News"){
+      $("#articles").prepend("Source : Trending News <i class='fas fa-rss-square'> </i>");     
     }
     else if(data[i].from == "reddit"){
-      $("#articles").prepend("Source : Trending News <i class='fab fa-reddit-square'></i>");     
+      $("#articles").prepend("Source : Reddit Front Page <i class='fab fa-reddit-square'></i>");     
     }
     else if(data[i].from == "twitter"){
       $("#articles").prepend("Source : Twitter <i class='fab fa-twitter-square'></i>");     
     }
     else{
-      $("#articles").prepend("Source : Stock News<i class='fas fa-money-bill-wave'></i>");     
+      $("#articles").prepend("Source : Stock News <i class='fas fa-money-bill-wave'></i>");     
     }
   }
 

@@ -159,7 +159,7 @@ app.get("/scrape-3", function(req, res) {
       result.title = $(this).children("a").text();
       linker = "https://www.reddit.com"
       result.link = linker + $(this).children("a").attr("href");
-      result.from = "all";
+      result.from = "reddit";
 
       db.Article.create(result)
         .then(function(dbArticle) {
@@ -203,6 +203,9 @@ app.get("/delete-scrapes", function(req, res) {
     }
   });
 });
+
+
+
 // SCRAPING DELETE 3 : ------ > END - X3
 
 
