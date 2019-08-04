@@ -128,6 +128,13 @@ $.getJSON("/articles", function(data) {
     $("#article_count").text(articlecount)
     });
     
+$('.btn').on('click', function() {
+      var $this = $(this);
+    $this.button('loading');
+      setTimeout(function() {
+         $this.button('reset');
+     }, 3000);
+  });
 
 });
 

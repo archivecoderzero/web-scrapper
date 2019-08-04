@@ -105,3 +105,10 @@ body {
 #instructions {
 font-size: 30px;
 }
+
+.modal-loading {
+  font-size: 100px;
+  color: white;
+  text-align:center;
+}
+
