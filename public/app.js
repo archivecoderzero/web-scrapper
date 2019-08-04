@@ -6,6 +6,13 @@ $.getJSON("/notes", function(data) {
   $("#notes_count").text(notecount)
   });
 
+  
+$.getJSON("/articles", function(data) {
+  let articlecount = data.length;
+  $("#article_count").text(articlecount)
+  });
+  
+
 
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
@@ -27,6 +34,13 @@ $.getJSON("/articles", function(data) {
       $("#articles").prepend("Source : Stock News<i class='fas fa-money-bill-wave'></i>");     
     }
   }
+
+  
+$.getJSON("/articles", function(data) {
+  let articlecount = data.length;
+  $("#article_count").text(articlecount)
+  });
+  
 
   });
 
@@ -108,7 +122,13 @@ $.getJSON("/notes", function(data) {
   let notecount = data.length;
   $("#notes_count").text(notecount)
   });
-  
+
+$.getJSON("/articles", function(data) {
+    let articlecount = data.length;
+    $("#article_count").text(articlecount)
+    });
+    
+
 });
 
 
