@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
 		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Bree+Serif|Indie+Flower|Teko&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Beth+Ellen|Bree+Serif|Indie+Flower|Teko&display=swap"
+		rel="stylesheet">
 	<title>The Info Scrapper</title>
 </head>
 
@@ -18,9 +19,14 @@
 
 	<nav class="navbar navbar-light bg-dark">
 		<span class="navbar-brand mb-0 h1">Web Scrapper</span>
+
+
 		{{!-- SCRAPE BUTTON 4 START --}}
 		<form action="/delete-scrapes">
-			<button type="submit" class="btn btn-danger">Delete Scrapes<i class="fas fa-bug"></i> </button>
+			<button type="submit" class="btn btn-danger">Delete Scrapes <i class="fas fa-bug"></i> </button>
+			<button type="button" class="btn btn-primary">
+			Total Notes <span id='notes_count' class="badge badge-light">0</span>
+		</button>
 		</form>
 		{{!-- SCRAPE BUTTON 4 END --}}
 	</nav>
@@ -28,37 +34,57 @@
 	<br>
 
 	<div class="jumbotron jumbotron-fluid">
-		    <h1 id="main-text">Choose Your Scrape</h3>
+		<h1 id="main-text">Choose Your Scrape</h3>
 			<br>
-		<div class="container">
-			<div class="row">
-				<div class="col-5">
-					{{!-- SCRAPE BUTTON 1 START --}}
-					<form action="/scrape-2">
-						<button type="submit" class="btn btn-success">News Articles <i class="fas fa-rss-square"></i></button>
-					</form>
-					{{!-- SCRAPE BUTTON 1 END --}}
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						{{!-- SCRAPE BUTTON 1 START --}}
+						<form action="/scrape-2">
+							<button type="submit" class="btn btn-info">News Articles <i class="fas fa-rss-square"></i></button>
+						</form>
+						{{!-- SCRAPE BUTTON 1 END --}}
+					</div>
+					<div class="col">
+						{{!-- SCRAPE BUTTON 2 START --}}
+						<form action="/scrape-1">
+							<button type="submit" class="btn btn-info">Stock Articles <i
+									class='fas fa-money-bill-wave'></i></button>
+						</form>
+						{{!-- SCRAPE BUTTON 2 END --}}
+					</div>
+					<div class="col">
+						{{!-- SCRAPE BUTTON 3 START --}}
+						<form action="/scrape-3">
+							<button type="submit" class="btn btn-info">Reddit <i class='fab fa-reddit-square'></i>
+							</button>
+						</form>
+						{{!-- SCRAPE BUTTON 3 END --}}
+					</div>
+					<div class="col">
+						{{!-- SCRAPE BUTTON 3 START --}}
+						<form action="/scrape-4">
+							<button type="submit" class="btn btn-info">Twitter <i class='fab fa-twitter-square'></i>
+							</button>
+						</form>
+						{{!-- SCRAPE BUTTON 3 END --}}
+					</div>
+
+										<div class="col">
+						{{!-- SCRAPE BUTTON 3 START --}}
+						<form action="/scrape-4">
+							<button type="submit" class="btn btn-info">Twitter <i class='fab fa-twitter-square'></i>
+							</button>
+						</form>
+						{{!-- SCRAPE BUTTON 3 END --}}
+					</div>
 				</div>
-				<div class="col-5">
-					{{!-- SCRAPE BUTTON 2 START --}}
-					<form action="/scrape-1">
-						<button type="submit" class="btn btn-info">Stock Articles <i class="fas fa-rss-square"></i></button>
-					</form>
-					{{!-- SCRAPE BUTTON 2 END --}}
-				</div>
-				<div class="col">
-					{{!-- SCRAPE BUTTON 3 START --}}
-					<form action="/scrape-3">
-						<button type="submit" class="btn btn-warning">Reddit <i class="fas fa-kiwi-bird"></i> </button>
-					</form>
-					{{!-- SCRAPE BUTTON 3 END --}} </div>
 			</div>
-		</div>
 	</div>
 
-<div class="jumbotron">
-	{{{ body }}}
-</div>
+	<div class="jumbotron">
+		{{{ body }}}
+	</div>
 
 
 	<footer class="card-footer">

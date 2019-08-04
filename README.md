@@ -1,4 +1,4 @@
-<h1 align="center">😼Welcome to Web-Scrapper </h1>
+<h1 align="center">😼Welcome to Web-Scrappe😼</h1>
 <h3 align="center">🌀By ArchiveCoderZero</h3>
 
 <p>
@@ -12,12 +12,19 @@
 
  > This is a web applications that scrapese the web for information , you can also add notes about it .
 
-## 🔹Version 1.0  Released  : 08/02/2019
+## 🔹Version 0.9 Innitial Released  : 08/02/2019
 
 > This is the base line application , i has the following functionalities : 
  -  scrape 3 website to find all the headers and link
  -  ability to submit notes on it 
  -  ability to delete the scraped articles
+
+## 🔹Version 1.0  
+> Added the following sites :
+ - Reddit r/all
+ - Twitter moments
+ - CNBC News Stock
+ - Trending News
 
 
 ## Known Bugs  : 08/03/19

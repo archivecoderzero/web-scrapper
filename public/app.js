@@ -1,21 +1,30 @@
 let beenclicked = false;
 
 
+$.getJSON("/notes", function(data) {
+  let notecount = data.length;
+  $("#notes_count").text(notecount)
+  });
+
+
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the apropos information on the page
-    $("#articles").prepend("<p   id='ind_art' >" + data[i].title +  "<a href=" + data[i].link  + "<i class='fas fa-arrow-circle-right'></i></a><i data-id='" + data[i]._id + " 'class='fas fa-pencil-alt' data-toggle='modal' data-target='#exampleModal'></i></p>");
+    $("#articles").prepend("<p   id='ind_art' >" + data[i].title +  "<a href=" + data[i].link  + " <i class='fas fa-arrow-circle-right'></i></a><i class='fas fa-pencil-alt' data-id='" + data[i]._id + "' data-toggle='modal' data-target='#exampleModal'></i></p>");
 
     if (data[i].from == "all"){
-      $("#articles").prepend("Category : All <i class='fas fa-globe-asia'> </i>");     
+      $("#articles").prepend("Source : Reddit r/all <i class='fab fa-reddit-square'> </i>");     
     }
     else if(data[i].from == "reddit"){
-      $("#articles").prepend(" Category : Reddit <i class='fab fa-reddit-square'></i>");     
+      $("#articles").prepend("Source : Trending News <i class='fab fa-reddit-square'></i>");     
+    }
+    else if(data[i].from == "twitter"){
+      $("#articles").prepend("Source : Twitter <i class='fab fa-twitter-square'></i>");     
     }
     else{
-      $("#articles").prepend("Category : Stock<i class='fas fa-money-bill-wave'></i>");     
+      $("#articles").prepend("Source : Stock News<i class='fas fa-money-bill-wave'></i>");     
     }
   }
 
@@ -93,6 +102,13 @@ $(document).on("click", "#savenote", function() {
   // Also, remove the values entered in the input and textarea for note entry
   $("#titleinput").val("");
   $("#bodyinput").val("");
+
+  
+$.getJSON("/notes", function(data) {
+  let notecount = data.length;
+  $("#notes_count").text(notecount)
+  });
+  
 });
 
 
