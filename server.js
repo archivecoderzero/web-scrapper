@@ -81,7 +81,7 @@ app.get("/articles", function(req, res) {
 // SCRAPING REAL-1 : ------ > START X2
 app.get("/scrape-2", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("https://old.reddit.com/r/news/").then(function(response) {
+  axios.get("https://old.reddit.com/r/wallstreetbet/").then(function(response) {
 
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
